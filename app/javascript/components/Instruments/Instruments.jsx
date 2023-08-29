@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Instrument from './Instrument'
+import Calendar from '../Calendar'
 
 const Instruments = () => {
   const [instruments, setInstruments] = useState([])
@@ -22,11 +23,12 @@ const Instruments = () => {
   })
 
   return (
-    <>
+    <div>
+      <Calendar />
       <div className="row justify-content-center">
         {grid}
       </div>
-    </>
+    </div>
   )
 }
 
