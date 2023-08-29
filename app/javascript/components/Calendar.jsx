@@ -16,6 +16,7 @@ const Calendar = () => {
       onChange={item => setState([item.selection])}
       moveRangeOnFirstSelection={false}
       ranges={state}
+      minDate={new Date()}
     />
   )
 }

@@ -1,5 +1,4 @@
 @import "bootstrap";
 
-@import 'react-date-range/dist/styles.css'; // main css file
-@import 'react-date-range/dist/theme/default.css'; // theme css file
-
+@import "../../../node_modules/react-date-range/dist/styles"; // main css file
+@import "../../../node_modules/react-date-range/dist/theme/default"; // theme css file
