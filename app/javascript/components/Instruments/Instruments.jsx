@@ -23,9 +23,6 @@ const Instruments = () => {
 
   return (
     <>
-      <div>
-        This is the Instruments#index view
-      </div>
       <div className="row justify-content-center">
         {grid}
       </div>

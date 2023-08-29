@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Instrument = (props) => {
   return (
@@ -14,7 +14,7 @@ const Instrument = (props) => {
           <span>2km</span>
         </div>
       </div>
-      <Link to={`/instruments/${props.id}`} className="stretched-link"></Link>
+      <Link to={`/instruments/${props.id}`} className="stretched-link" />
     </div>
   )
 }

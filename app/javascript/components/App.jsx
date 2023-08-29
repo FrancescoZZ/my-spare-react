@@ -6,7 +6,7 @@ import Instrument from './Instrument/Instrument'
 const App = () => {
   return (
     <div className="container">
-      <h1>mySpare</h1>
+      <h1 className="mt-2 mb-4">mySpare</h1>
       <Router>
         <Routes>
           <Route exact path="/" element={<Instruments/>} />
