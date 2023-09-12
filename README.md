@@ -1,3 +1,3 @@
 # README
 
-React rewrite of [my-spare](https://github.com/caroline-jeffra/my_spare)
+React rewrite of [my_spare](https://github.com/caroline-jeffra/my_spare)
