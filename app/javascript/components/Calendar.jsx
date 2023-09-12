@@ -5,7 +5,7 @@ const Calendar = () => {
   const [state, setState] = useState([
     {
       startDate: null,
-      endDate: null,
+      endDate: new Date(""),
       key: 'selection'
     }
   ]);
