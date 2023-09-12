@@ -2,15 +2,10 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Instrument from './Instrument'
 import Calendar from '../Calendar'
+import Search from '../Search'
 
 const Instruments = () => {
   const [instruments, setInstruments] = useState([])
-
-  useEffect(() => {
-    axios.get('/api/v1/instruments.json')
-    .then(resp => setInstruments(resp.data.data))
-    .catch(resp => console.log(resp))
-  }, [instruments.length])
 
   const grid = instruments.map( item => {
     return(
@@ -23,12 +18,13 @@ const Instruments = () => {
   })
 
   return (
-    <div>
+    <>
+      <Search setInstruments={setInstruments}/>
       <Calendar />
       <div className="row justify-content-center">
         {grid}
       </div>
-    </div>
+    </>
   )
 }
 
