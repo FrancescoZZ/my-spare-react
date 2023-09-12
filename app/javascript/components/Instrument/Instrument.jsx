@@ -22,7 +22,29 @@ const Instrument = (props) => {
   return (
     <div className="row">
       <div className="col-xl-4">
+        <h2>{instrument.model}</h2>
         <img src={instrument.image_url} alt={instrument.model} className="rounded" style={{height: 400}}/>
+        { (instrument.category || instrument.brand) &&
+          <>
+            <hr />
+            { instrument.category && 
+              <>
+                <strong>Category:</strong> {instrument.category}<br />
+              </>
+            }
+            { instrument.brand && 
+              <>
+                <strong>Brand:</strong> {instrument.brand}<br />
+              </>
+            }
+          </>
+        }
+        { instrument.description &&
+          <>
+            <hr />
+            <p>{instrument.description}</p>
+          </>
+        }
       </div>
     </div>
   )
