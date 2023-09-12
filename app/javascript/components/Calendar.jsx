@@ -17,6 +17,8 @@ const Calendar = () => {
       moveRangeOnFirstSelection={false}
       ranges={state}
       minDate={new Date()}
+      startDatePlaceholder={"Start date"}
+      endDatePlaceholder={"End date"}
     />
   )
 }
