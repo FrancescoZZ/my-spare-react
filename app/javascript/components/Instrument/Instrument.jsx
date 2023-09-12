@@ -8,7 +8,6 @@ const Instrument = (props) => {
   const [loaded, setLoaded] = useState(false)
   const id = useParams().id
   const url = `/api/v1/instruments/${id}`
-  console.log("test");
 
   useEffect(()=>{
     axios.get(url)

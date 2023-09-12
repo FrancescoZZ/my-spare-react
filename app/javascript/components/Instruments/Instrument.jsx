@@ -7,8 +7,10 @@ const Instrument = (props) => {
       <img src={props.attributes.image_url} alt={props.attributes.model} className="card-img-top rounded mx-auto" style={{ width: 300, height: 300, overflow: "hidden", objectFit: "cover" }} />
       <h5 className="card-title mb-1">{props.attributes.model}</h5>
       <div className="card-text">
-        <span>{props.attributes.brand}</span>
-        <span>{props.attributes.category}</span>
+        <div className="d-flex col justify-content-between">
+          <span>{props.attributes.brand}</span>
+          <span>{props.attributes.category}</span>
+        </div>
         <div className="d-flex col justify-content-between">
           <span><strong>{Math.floor(props.attributes.daily_price)}€</strong>/day</span>
           <span>2km</span>
