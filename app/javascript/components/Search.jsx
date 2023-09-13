@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Calendar from './Calendar'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCalendar } from '@fortawesome/free-regular-svg-icons'
+import { faCalendarXmark } from '@fortawesome/free-regular-svg-icons'
 
 const Search = ({ setInstruments }) => {
   const [query, setQuery] = useState("");
@@ -25,12 +28,18 @@ const Search = ({ setInstruments }) => {
   return(
     <>
       <form action="">
-        <input
-          type="text"
-          className="form-control"
-        placeholder="Search for instruments..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}/>
+        <div className="input-group">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Search for instruments..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}/>
+          <div className="input-group-append">
+            <FontAwesomeIcon icon={faCalendar} />
+            <FontAwesomeIcon icon={faCalendarXmark} />
+          </div>
+        </div>
         <Calendar setDates={setDates} />
       </form>
     </>
