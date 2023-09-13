@@ -14,8 +14,9 @@ module Api
                           Instrument.all
                         end
         if params[:dates].present?
-          @start_date = Date.parse(params[:dates].split(' to ').first)
-          @end_date = Date.parse(params[:dates].split(' to ').last)
+          @start_date = params[:dates][:startDate].to_date
+          @end_date = params[:dates][:endDate].to_date
+          puts @start_date, @end_date
           @instruments = @instruments.available_between(@start_date, @end_date)
         end
         if params[:distance].present? && params[:distance].to_i != 100

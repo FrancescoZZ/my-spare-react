@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { DateRange } from 'react-date-range'
 
-const Calendar = () => {
+const Calendar = ({ setDates }) => {
   const [state, setState] = useState([
     {
       startDate: null,
@@ -10,10 +10,16 @@ const Calendar = () => {
     }
   ]);
 
+  useEffect(() => {
+    setDates({state})
+  }, [state]);
+
   return(
     <DateRange
-      editableDateInputs={true}
-      onChange={item => setState([item.selection])}
+      editableDateInputs={false}
+      onChange={(item) => {
+        setState([item.selection])
+      }}
       moveRangeOnFirstSelection={false}
       ranges={state}
       minDate={new Date()}

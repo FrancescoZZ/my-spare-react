@@ -20,7 +20,6 @@ const Instruments = () => {
   return (
     <>
       <Search setInstruments={setInstruments}/>
-      <Calendar />
       <div className="row justify-content-center">
         {grid}
       </div>
