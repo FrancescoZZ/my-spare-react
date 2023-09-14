@@ -5,7 +5,7 @@ import Instrument from './Instrument/Instrument'
 
 const App = () => {
   return (
-    <div className="container">
+    <div className="container" style={{position: "relative"}}>
       <h1 className="mt-2 mb-4">mySpare</h1>
       <Router>
         <Routes>
@@ -19,4 +19,3 @@ const App = () => {
 }
 
 export default App;
-

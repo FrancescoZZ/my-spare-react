@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import Calendar from './Calendar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,6 +8,8 @@ import { faCalendarXmark } from '@fortawesome/free-regular-svg-icons'
 const Search = ({ setInstruments }) => {
   const [query, setQuery] = useState("");
   const [dates, setDates] = useState({});
+  const [calendarHidden, setCalendarHidden] = useState(true);
+  // const ref = useRef();
 
   useEffect(() => {
     const params = {
@@ -25,6 +27,8 @@ const Search = ({ setInstruments }) => {
     }).then(resp => setInstruments(resp.data.data));
   }
 
+  const toggleCalendar = () => setCalendarHidden(!calendarHidden);
+
   return(
     <>
       <form action="">
@@ -36,12 +40,18 @@ const Search = ({ setInstruments }) => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}/>
           <div className="input-group-append">
-            <FontAwesomeIcon icon={faCalendar} />
-            <FontAwesomeIcon icon={faCalendarXmark} />
+            <div className="btn btn-dark" style={{borderRadius: 0}} title="Toggle Calendar" onClick={toggleCalendar}>
+              <FontAwesomeIcon icon={faCalendar} color="white" />
+            </div>
+          </div>
+          <div>
+            <div className="btn btn-dark" style={{borderTopLeftRadius: 0, borderBottomLeftRadius: 0}} title="Reset Calendar" onClick={() => ref.current.resetCalendar()}>
+              <FontAwesomeIcon icon={faCalendarXmark} color="white" />
+            </div>
           </div>
         </div>
-        <Calendar setDates={setDates} />
       </form>
+      <Calendar setDates={setDates} calendarHidden={calendarHidden} />
     </>
   )
 }
