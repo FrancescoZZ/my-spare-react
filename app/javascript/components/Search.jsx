@@ -9,7 +9,7 @@ const Search = ({ setInstruments }) => {
   const [query, setQuery] = useState("");
   const [dates, setDates] = useState({});
   const [calendarHidden, setCalendarHidden] = useState(true);
-  // const ref = useRef();
+  const ref = useRef();
 
   useEffect(() => {
     const params = {
@@ -51,7 +51,7 @@ const Search = ({ setInstruments }) => {
           </div>
         </div>
       </form>
-      <Calendar setDates={setDates} calendarHidden={calendarHidden} />
+      <Calendar setDates={setDates} calendarHidden={calendarHidden} ref={ref} />
     </>
   )
 }
